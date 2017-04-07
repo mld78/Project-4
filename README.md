@@ -20,19 +20,19 @@ An MVP will be to successfully build out each model and start linking up the sta
 Index:  
 <img src="Readme_assets/Index.jpg" width="300px">  
   
-  Runes:
+  Runes:  
   <img src="Readme_assets/Runes.jpg" width="300px">  
     
-  Masteries:
+  Masteries:  
   <img src="Readme_assets/Masteries.jpg" width="300px">  
     
-  Champion Select:
+  Champion Select:  
   <img src="Readme_assets/Champion.jpg" width="300px">  
     
-  Items:
+  Items:  
   <img src="Readme_assets/Items.jpg" width="300px">
 
-**ERD:**  
+**ERD:**    
 <img src="Readme_assets/ERD.jpg" width="300px">
 
 ###Next Steps:
