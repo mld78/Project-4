@@ -12,6 +12,10 @@ MEAN stack, Javascript, Html, Bootstrap, CSS, and the League of Legends [API](ht
 ### Process:
 [Trello](https://trello.com/b/cWwcNknZ/project-4)
 
+Why I want to make this app? 
+
+This is one of the most popular games in the world and yet has very few applications outside of itself to optimize the experience. The purpose of this app would be to add an additional function to the game and benefit the player experience. 
+
 There is going to be a static page for each model: Mastery, Rune, Champion, and Item. Once a user picks out each one the math will all add together with the power of magic (or what I'm pretty much going to spend a long time trying to figure out the code for).
 
 An MVP will be to successfully build out each model and start linking up the stats from each model. There is a lot of math due to scaling stats for certain things so I expect this project as a whole will take a lot longer than the 6 days before the presentation.
