@@ -18,22 +18,22 @@ An MVP will be to successfully build out each model and start linking up the sta
 
 **WireFrames:**  
 Index:  
-<img src="Readme_assets/index.jpg" width="300px">  
+<img src="Readme_assets/Index.jpg" width="300px">  
   
   Runes:
-  <img src="Readme_assets/runes.jpg" width="300px">  
+  <img src="Readme_assets/Runes.jpg" width="300px">  
     
   Masteries:
-  <img src="Readme_assets/masteries.jpg" width="300px">  
+  <img src="Readme_assets/Masteries.jpg" width="300px">  
     
   Champion Select:
   <img src="Readme_assets/Champion.jpg" width="300px">  
     
   Items:
-  <img src="Readme_assets/items.jpg" width="300px">
+  <img src="Readme_assets/Items.jpg" width="300px">
 
 **ERD:**  
-<img src="Readme_assets/erd.jpg" width="300px">
+<img src="Readme_assets/ERD.jpg" width="300px">
 
 ###Next Steps:
 
