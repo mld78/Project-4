@@ -17,19 +17,23 @@ function ViewRouter($stateProvider, $urlRouterProvider){
          })
          .state('mastery', {
            url: '/mastery',
-           templateUrl: 'mastery.html'
+           templateUrl: 'mastery.html',
+           controller: 'MasteriesController as masteries'
          })
          .state('rune', {
            url: '/rune',
-           templateUrl: 'rune.html'
+           templateUrl: 'rune.html',
+           controller: 'RunesController as runes'
          })
          .state('champion', {
            url: '/champion',
-           templateUrl: 'champion.html'
+           templateUrl: 'champion.html',
+           controller: 'ChampionsController as champions'
          })
          .state('item', {
            url: '/item',
-           templateUrl: 'item.html'
+           templateUrl: 'item.html',
+           controller: 'ItemsController as items'
          })
          .state('home', {
            url: '/home',
