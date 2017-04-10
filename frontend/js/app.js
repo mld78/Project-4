@@ -1,50 +1,5 @@
 angular.module('LoLStats', ['ui.router'])
        .config(ViewRouter)
-       .controller('MasteryController', MasteryController)
-       .controller('RuneController', RuneController)
-       .controller('ChampionController', ChampionController)
-       .controller('ItemController', ItemController)
-//Mastery Controller
-MasteryController.$inject = ['MasteryFactory']
-
-function MasteryController(MasteryFactory){
-var mastery = this
-
-}
-
-
-//Rune Controller
-RuneController.$inject = ['RuneFactory']
-
-function RuneController(RuneFactory){
-  var rune = this
-
-}
-
-
-
-//Champion Controller
-ChampionController.$inject = ['ChampionFactory']
-
-function ChampionController(ChampionFactory){
-  var champion = this
-
-}
-
-
-
-//Item Controller
-ItemController.$inject = ['ItemFactory']
-
-function ItemController(ItemFactory){
-  var item = this
-}
-
-
-
-
-
-
 
 
 
@@ -58,7 +13,7 @@ function ViewRouter($stateProvider, $urlRouterProvider){
          $stateProvider
          .state('index', {
            url: '/',
-           templateUrl: 'home.html'
+           templateUrl: 'index.html'
          })
          .state('mastery', {
            url: '/mastery',
