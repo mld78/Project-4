@@ -5,7 +5,7 @@ var
 	favicon = require('serve-favicon')
 
 app.use(logger('dev'))
-app.use(express.static('public'))
+app.use(express.static('frontend'))
 // app.use(favicon(__dirname + '/public/img/favicon.ico'))
 
 app.listen(3000, function(err) {
