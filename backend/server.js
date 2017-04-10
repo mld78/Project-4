@@ -23,7 +23,7 @@ app.use(express.static('frontend'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(favicon(__dirname + '/public/img/favicon.ico'))
-app.use(routes)
+// app.use(routes)
 
 
 

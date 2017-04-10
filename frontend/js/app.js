@@ -53,7 +53,7 @@ function ItemController(ItemFactory){
 //States for the show pages
 function ViewRouter($stateProvider, $urlRouterProvider){
 
-         $urlRouterProvider.otherwise("/index");
+         $urlRouterProvider.otherwise("/");
 
          $stateProvider
          .state('index', {
@@ -76,3 +76,8 @@ function ViewRouter($stateProvider, $urlRouterProvider){
            url: '/item',
            templateUrl: 'item.html'
          })
+         .state('home', {
+           url: '/home',
+           templateUrl: 'home.html'
+         })
+}
