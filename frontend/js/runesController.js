@@ -6,13 +6,14 @@
 
 	function RunesController(RuneFactory){
 		var self = this
+
+    self.isCollapsed1 = false
+    self.isCollapsed2 = false
+
+    
     console.log("Runes controller accessed...")
 		// self.all = []
     self.runeList = []
-    // self.selectTier = selectTier
-    // self.filter ={
-    //   'runeList.rune.rune.tier' : '1'
-    // }
 
     RuneFactory.show()
     .success(function(data) {

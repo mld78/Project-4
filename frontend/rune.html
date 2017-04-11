@@ -3,22 +3,52 @@
 
 
 
+<!-- <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
+	<hr>
+	<div uib-collapse="isCollapsed">
+		<div class="well well-lg">Some content</div>
+	</div> -->
 
 
 <!--List of runes seperated by type  -->
-<ul class="col-med-4">
+<section class="select-runes col-med-4">
 
- <li ng-repeat="rune in runes.runeList" ng-show="rune.rune.tier == runes.selectedTier">
+  <button type="button" class="btn btn-default" ng-click="runes.isCollapsed1 = !runes.isCollapsed1">Marks</button>
+	<hr>
+	<div uib-collapse="runes.isCollapsed1">
+		<ul class="well well-lg" >
+      <li ng-repeat="rune in runes.runeList" ng-show="rune.rune.tier == runes.selectedTier && rune.rune.type == red" >
+        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+      </li>
+    </ul>
+	</div>
+  <hr>
 
-      {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
-  </li>
-</ul>
+  <button type="button" class="btn btn-default" ng-click="runes.isCollapsed2 = !runes.isCollapsed2">Glyphs</button>
+	<hr>
+	<div uib-collapse="runes.isCollapsed2">
+		<ul class="well well-lg" >
+      <li ng-repeat="rune in runes.runeList" ng-show="rune.rune.tier == runes.selectedTier">
+        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+      </li>
+    </ul>
+	</div>
+  <hr>
 
+</section>
 <!-- List the stats added together once runes have been clicked -->
 
-<section class="Rune_stats">
+<section class="Rune_stats col-med-4">
   <div class="">
     Rune Stats: <br>
+
+  </div>
+</section>
+
+
+<section class="selected-Runes col-med-4">
+  <div class="">
+    Selected Runes: <br>
 
   </div>
 </section>

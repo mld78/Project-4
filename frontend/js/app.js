@@ -1,4 +1,4 @@
-angular.module('LoLStats', ['ui.router'])
+angular.module('LoLStats', ['ui.router', 'ui.bootstrap'])
        .config(ViewRouter)
 
 
