@@ -1,0 +1,15 @@
+nav.tabs {
+    background: #4d5d70;
+    max-width: 75%;
+    margin: 0 auto;
+}
+nav.tabs a {
+    display: inline-block;
+    background: rgba(255,255,255,0.7);
+    color: black;
+    padding: 10px 20px;
+    margin-right: 1px;
+}
+
+/* whaaaaaaat. check out the final helper of the readme! */
+nav.tabs a.active { background: rgba(255,255,255,1);}

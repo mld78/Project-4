@@ -5,8 +5,18 @@
   ChampionsController.$inject = ["ChampionFactory"]
 
 	function ChampionsController(ChampionFactory){
-		var rune = this
-		rune.all = []
+		var self = this
+
+		ChampionFactory.show()
+    .success(function(data) {
+			self.championList = []
+      for(champion in data.data) {
+        self.championList.push(data.data[champion])
+      }
+      console.log(self.championList)
+      console.log("Testing 123")
+
+		})
 
 
   }

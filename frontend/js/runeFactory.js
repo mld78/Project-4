@@ -5,7 +5,7 @@ RuneFactory.$inject = ['$http']
 
 
 function RuneFactory($http){
-  var apiUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/rune.json'
+  var apiUrl = 'https://na1.api.riotgames.com/lol/static-data/v3/runes/?api_key=RGAPI-a781ddac-73e4-4d26-8796-be13fa8833cc'
 
 
 function show(){

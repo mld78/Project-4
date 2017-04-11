@@ -12,8 +12,8 @@
     RuneFactory.show()
     .success(function(data) {
 			self.runeList = []
-      for(rune in data.data.index) {
-        self.runeList.push(rune)
+      for(rune in data.data) {
+        self.runeList.push(data.data[rune])
       }
       console.log(self.runeList)
       console.log("Testing 123")

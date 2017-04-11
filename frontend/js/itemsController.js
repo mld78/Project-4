@@ -5,8 +5,18 @@
   ItemsController.$inject = ["ItemFactory"]
 
 	function ItemsController(ItemFactory){
-		var rune = this
-		rune.all = []
+		var self = this
+
+		ItemFactory.show()
+    .success(function(data) {
+			self.itemList = []
+      for(item in data.data) {
+        self.itemList.push(data.data[item])
+      }
+      console.log(self.itemList)
+      console.log("Testing 123")
+
+		})
 
 
   }
