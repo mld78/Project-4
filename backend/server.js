@@ -6,7 +6,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     path = require('path'),
 		cookieParser = require('cookie-parser'),
-		port        = process.env.PORT || 3000
+		port        = process.env.PORT || 3000,
+		frontend = process.env.PWD + '/frontend/'
 
   var mongoose = require('./config/database')
 
@@ -22,7 +23,7 @@ app.use(cors())
 
 
 app.use(logger('dev'))
-app.use(express.static('/frontend'))
+app.use(express.static(frontend))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
