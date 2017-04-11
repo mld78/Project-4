@@ -17,18 +17,41 @@
 	<hr>
 	<div uib-collapse="runes.isCollapsed1">
 		<ul class="well well-lg" >
-      <li ng-repeat="rune in runes.runeList" ng-show="rune.rune.tier == runes.selectedTier && rune.rune.type == red" >
+      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
+        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+        <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/8001.png" alt="">
+      </li>
+    </ul>
+	</div>
+  <hr>
+
+  <button type="button" class="btn btn-default"  ng-click="runes.isCollapsed2 = !runes.isCollapsed2">Glyphs</button>
+	<hr>
+	<div uib-collapse="runes.isCollapsed2">
+		<ul class="well well-lg" >
+      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'blue'" ng-show="rune.rune.tier == runes.selectedTier">
         {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
       </li>
     </ul>
 	</div>
   <hr>
 
-  <button type="button" class="btn btn-default" ng-click="runes.isCollapsed2 = !runes.isCollapsed2">Glyphs</button>
+  <button type="button" class="btn btn-default"  ng-click="runes.isCollapsed3 = !runes.isCollapsed3">Seals</button>
 	<hr>
-	<div uib-collapse="runes.isCollapsed2">
+	<div uib-collapse="runes.isCollapsed3">
 		<ul class="well well-lg" >
-      <li ng-repeat="rune in runes.runeList" ng-show="rune.rune.tier == runes.selectedTier">
+      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'yellow'" ng-show="rune.rune.tier == runes.selectedTier">
+        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+      </li>
+    </ul>
+	</div>
+  <hr>
+
+  <button type="button" class="btn btn-default"  ng-click="runes.isCollapsed4 = !runes.isCollapsed4">Quints</button>
+	<hr>
+	<div uib-collapse="runes.isCollapsed4">
+		<ul class="well well-lg" >
+      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'black'" ng-show="rune.rune.tier == runes.selectedTier">
         {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
       </li>
     </ul>

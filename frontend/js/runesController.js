@@ -7,10 +7,12 @@
 	function RunesController(RuneFactory){
 		var self = this
 
-    self.isCollapsed1 = false
-    self.isCollapsed2 = false
+    self.isCollapsed1 = true
+    self.isCollapsed2 = true
+    self.isCollapsed3 = true
+    self.isCollapsed4 = true
 
-    
+
     console.log("Runes controller accessed...")
 		// self.all = []
     self.runeList = []
