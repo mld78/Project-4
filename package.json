@@ -2,10 +2,10 @@
   "name": "project_4",
   "version": "1.0.0",
   "description": "> League of Stat Building will be a League of Legends application that allows a person to try out different combinations of runes, masteries, and items for a specific character to optimize their in-game stats.",
-  "main": "server.js",
+  "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node /backend/server.js"
   },
   "repository": {
     "type": "git",
