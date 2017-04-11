@@ -9,8 +9,7 @@ var express = require('express'),
 
   var mongoose = require('./config/database')
 
-	var db = process.env.MONGODB_URI || 'mongodb://localhost/LolStats'
-
+	
 
   var routes = require('./config/routes')
 
