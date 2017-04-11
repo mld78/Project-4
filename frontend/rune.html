@@ -1,6 +1,34 @@
 
 <h2>Rune Page</h2>
 
+
+
+
+
+<!--List of runes seperated by type  -->
 <ul>
-  <li ng-repeat="rune in runes.runeList">{{rune.name}}: <em>{{rune.description}}</em></li>
+
+ <li ng-repeat="rune in runes.runeList" ng-show="rune.rune.tier == runes.selectedTier">
+
+      {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+  </li>
 </ul>
+
+<!-- List the stats added together once runes have been clicked -->
+
+<section class="Rune_stats">
+  <div class="">
+    Rune Stats: <br>
+
+  </div>
+</section>
+
+<!-- determine what tier runes you want to view  -->
+<footer>
+  <div>
+    <input type="radio" value="1" ng-model="runes.selectedTier" >Tier 1
+    <input type="radio" value="2" ng-model="runes.selectedTier" >Tier 2
+    <input type="radio" value="3" ng-model="runes.selectedTier" >Tier 3
+</div>
+
+</footer>
