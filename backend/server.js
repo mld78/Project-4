@@ -7,7 +7,7 @@ var express = require('express'),
     path = require('path'),
 		port        = process.env.PORT || 3000
 
-  var mongoose = require('mongoose')
+  var mongoose = require('./config/database')
 
 	var db = process.env.MONGODB_URI || 'mongodb://localhost/LolStats'
 
@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('dev'))
 app.use(cookieParser())
 // app.use(favicon(__dirname + '/public/img/favicon.ico'))
-// app.use(routes)
+app.use(routes)
 
 
 
