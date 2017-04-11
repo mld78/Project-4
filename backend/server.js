@@ -5,29 +5,32 @@ var express = require('express'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
     path = require('path'),
+		cookieParser = require('cookie-parser'),
 		port        = process.env.PORT || 3000
 
   var mongoose = require('./config/database')
 
-	
+
 
   var routes = require('./config/routes')
 
 app.use(cors())
 
-mongoose.connect('mongodb://localhost/LolStats')
+// mongoose.connect('mongodb://localhost/LolStats')
 
 
 
 
 app.use(logger('dev'))
-app.use(express.static('frontend'))
+app.use(express.static('/frontend'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(morgan('dev'))
+
 app.use(cookieParser())
 // app.use(favicon(__dirname + '/public/img/favicon.ico'))
-app.use(routes)
+app.get('/', function(){
+	console.log("something")
+})
 
 
 
