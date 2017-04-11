@@ -11,7 +11,7 @@
 
 
 <!--List of runes seperated by type  -->
-<section class="select-runes col-med-4">
+<section class="select-runes col-md-4">
 
   <button type="button" class="btn btn-default" ng-click="runes.isCollapsed1 = !runes.isCollapsed1">Marks</button>
 	<hr>
@@ -19,7 +19,7 @@
 		<ul class="well well-lg" >
       <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
         {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
-        <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/8001.png" alt="">
+        <img ng-src="'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + {{rune.image.full}}" alt="">
       </li>
     </ul>
 	</div>
@@ -58,10 +58,19 @@
 	</div>
   <hr>
 
+  <!-- determine what tier runes you want to view  -->
+  <footer>
+    <div>
+      <input type="radio" value="1" ng-model="runes.selectedTier" >Tier 1
+      <input type="radio" value="2" ng-model="runes.selectedTier" >Tier 2
+      <input type="radio" value="3" ng-model="runes.selectedTier" >Tier 3
+  </div>
+
+  </footer>
 </section>
 <!-- List the stats added together once runes have been clicked -->
 
-<section class="Rune_stats col-med-4">
+<section class="Rune_stats col-md-4">
   <div class="">
     Rune Stats: <br>
 
@@ -69,19 +78,9 @@
 </section>
 
 
-<section class="selected-Runes col-med-4">
+<section class="selected-Runes col-md-4">
   <div class="">
     Selected Runes: <br>
 
   </div>
 </section>
-
-<!-- determine what tier runes you want to view  -->
-<footer>
-  <div>
-    <input type="radio" value="1" ng-model="runes.selectedTier" >Tier 1
-    <input type="radio" value="2" ng-model="runes.selectedTier" >Tier 2
-    <input type="radio" value="3" ng-model="runes.selectedTier" >Tier 3
-</div>
-
-</footer>
