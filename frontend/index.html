@@ -26,17 +26,17 @@
 
   <body>
     <header>
-      <h1>League of Stat Building</h1>
+      <h1 class="text-center">League of Stat Building</h1>
 
     </header>
 
-    <nav class="tabs">
+    <nav class="tabs text-center">
+      <a ui-sref-active="active" ui-sref="home">Home</a>
+      <a ui-sref-active="active" ui-sref="rune">Runes</a>
     			<a ui-sref-active="active" ui-sref="mastery">Masteries</a>
-    			<a ui-sref-active="active" ui-sref="rune">Runes</a>
     			<a ui-sref-active="active" ui-sref="champion">Champions</a>
     			<a ui-sref-active="active" ui-sref="item">Items</a>
-    			<a ui-sref-active="active" ui-sref="home">Home</a>
-    			<a ui-sref-active="active" ui-sref="">User</a>
+    			<!-- <a ui-sref-active="active" ui-sref="">User</a> -->
     		</nav>
 
   <main ui-view></main>

@@ -1,5 +1,5 @@
 
-<h2>Rune Page</h2>
+<h1 class="text-center">Rune Page</h1>
 
 
 
@@ -12,14 +12,25 @@
 
 <!--List of runes seperated by type  -->
 <section class="select-runes col-md-4">
+<h3>Select your runes:</h3>
 
+  <!-- determine what tier runes you want to view  -->
+  <header>
+    <div>
+      <input type="radio" value="1" ng-model="runes.selectedTier" >Tier 1
+      <input type="radio" value="2" ng-model="runes.selectedTier" >Tier 2
+      <input type="radio" value="3" ng-model="runes.selectedTier" >Tier 3
+  </div>
+
+</header>
   <button type="button" class="btn btn-default" ng-click="runes.isCollapsed1 = !runes.isCollapsed1">Marks</button>
 	<hr>
 	<div uib-collapse="runes.isCollapsed1">
 		<ul class="well well-lg" >
-      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
-        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
-        <img ng-src="'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + {{rune.image.full}}" alt="">
+      <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
+        {{rune.name}}: <em>{{rune.description}}</em>
+        <button type="button" class="btn btn-default" ng-click="runes.setMark(rune)" > Add Mark</button>
+        <hr>
       </li>
     </ul>
 	</div>
@@ -29,8 +40,9 @@
 	<hr>
 	<div uib-collapse="runes.isCollapsed2">
 		<ul class="well well-lg" >
-      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'blue'" ng-show="rune.rune.tier == runes.selectedTier">
-        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+      <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'blue'" ng-show="rune.rune.tier == runes.selectedTier">
+        {{rune.name}}: <em>{{rune.description}}</em>
+        <button type="button" class="btn btn-default" ng-click="runes.setGlyph(rune)"> Add Glyph</button> <hr>
       </li>
     </ul>
 	</div>
@@ -40,8 +52,9 @@
 	<hr>
 	<div uib-collapse="runes.isCollapsed3">
 		<ul class="well well-lg" >
-      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'yellow'" ng-show="rune.rune.tier == runes.selectedTier">
-        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+      <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'yellow'" ng-show="rune.rune.tier == runes.selectedTier">
+        {{rune.name}}: <em>{{rune.description}}</em>
+        <button type="button" class="btn btn-default" ng-click="runes.setSeal(rune)"> Add Seal</button> <hr>
       </li>
     </ul>
 	</div>
@@ -51,36 +64,79 @@
 	<hr>
 	<div uib-collapse="runes.isCollapsed4">
 		<ul class="well well-lg" >
-      <li ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'black'" ng-show="rune.rune.tier == runes.selectedTier">
-        {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+      <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'black'" ng-show="rune.rune.tier == runes.selectedTier" ng-model="runes.selectedRune">
+        {{rune.name}}: <em>{{rune.description}}</em>
+          <button type="button" class="btn btn-default" ng-click="runes.setQuint(rune)"> Add Seal</button><hr>
       </li>
     </ul>
 	</div>
   <hr>
 
-  <!-- determine what tier runes you want to view  -->
-  <footer>
-    <div>
-      <input type="radio" value="1" ng-model="runes.selectedTier" >Tier 1
-      <input type="radio" value="2" ng-model="runes.selectedTier" >Tier 2
-      <input type="radio" value="3" ng-model="runes.selectedTier" >Tier 3
-  </div>
+</section>
 
-  </footer>
+
+<section class="selected-Runes col-md-4">
+
+  <h3>Selected Runes:  </h3> <br> <hr>
+
+  <div class="well well-lg">
+
+      <div class="selected-Runes-marks">
+          Total marks selected: {{runes.totalMarks.length}}.
+          <ul>
+            <li ng-repeat="rune in runes.totalMarks track by $index">
+              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+
+            </li>
+          </ul>
+
+      </div>
+
+      <div class="selected-Runes-glyphs">
+        Total glyphs selected: {{runes.totalGlyphs.length}}.
+        <!-- Selected glyphs go here, max 9: -->
+        <ul>
+          <li ng-repeat="rune in runes.totalGlyphs track by $index">
+            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="selected-Runes-seals">
+        Total seals selected: {{runes.totalSeals.length}}.
+        <!-- Selected seals go here, max 9: -->
+        <ul>
+          <li ng-repeat="rune in runes.totalSeals track by $index">
+            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+
+          </li>
+        </ul>
+
+      </div>
+      <div class="selected-Runes-quints">
+        Total quints selected: {{runes.totalQuints.length}}.
+        <!-- Selected quints go here, max 3: -->
+        <ul>
+          <li ng-repeat="rune in runes.totalQuints track by $index">
+            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+
+          </li>
+        </ul>
+
+      </div>
+ <input type="submit"  class="btn btn-default" />
+  </div>
 </section>
 <!-- List the stats added together once runes have been clicked -->
 
 <section class="Rune_stats col-md-4">
   <div class="">
     Rune Stats: <br>
+      <div class="">
 
-  </div>
-</section>
-
-
-<section class="selected-Runes col-md-4">
-  <div class="">
-    Selected Runes: <br>
+      </div>
 
   </div>
 </section>
