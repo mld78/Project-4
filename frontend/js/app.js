@@ -39,8 +39,9 @@ function ViewRouter($stateProvider, $urlRouterProvider){
            url: '/login',
            templateUrl: 'login.html'
          })
-         .state('signup', {
-           url: '/signup',
-           templateUrl: 'signup.html'
+         .state('profile', {
+           url: '/profile',
+           templateUrl: 'profile.html'
          })
+
 }

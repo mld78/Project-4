@@ -22,7 +22,7 @@ app.use(cors())
 
 // mongoose.connect('mongodb://localhost/LolStats')
 
-
+require('dotenv').config();
 
 
 app.use(logger('dev'))
@@ -43,18 +43,53 @@ app.use(cookieParser())
 // app.set("views","../frontend")
 
 // configure passport
-app.use(session({ secret: 'LolStats' }))
-app.use(passport.initialize())
-// session implementaion
-app.use(passport.session())
-app.use(flash())
+// app.use(session({ secret: 'LolStats' }))
+// app.use(passport.initialize())
+// // session implementaion
+// app.use(passport.session())
+// app.use(flash())
+//
+// // This middleware will allow us to use the current user in the layout
+// require('./config/passport')(passport)
+// app.use(function (req, res, next) {
+//   global.user = req.user
+//   next()
+// })
 
-// This middleware will allow us to use the current user in the layout
-require('./config/passport')(passport)
-app.use(function (req, res, next) {
-  global.user = req.user
-  next()
-})
+// Validate content-type.
+app.use(validateContentType);
+
+app.use(routes);
+
+app.use(addFailedAuthHeader);
+
+app.listen(3000);
+
+function validateContentType(req, res, next) {
+  var methods = ['PUT', 'PATCH', 'POST'];
+  if (                                    // If the request is
+    methods.indexOf(req.method) !== -1 && // one of PUT, PATCH or POST, and
+    Object.keys(req.body).length !== 0 && // has a body that is not empty, and
+    !req.is('json')                       // does not have an application/json
+  ) {                                     // Content-Type header, then …
+    var message = 'Content-Type header must be application/json.';
+    res.status(400).json(message);
+  } else {
+    next();
+  }
+}
+
+// When there is a 401 Unauthorized, the repsonse shall include a header
+// WWW-Authenticate that tells the client how they must authenticate
+// their requests.
+function addFailedAuthHeader(err, req, res, next) {
+  var header = {'WWW-Authenticate': 'Bearer'};
+  if (err.status === 401) {
+    if (err.realm) header['WWW-Authenticate'] += ` realm="${err.realm}"`;
+    res.set(header);
+  }
+  next(err);
+}
 
 
 
