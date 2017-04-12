@@ -11,7 +11,11 @@ var express = require('express'),
 		session      = require('express-session'),
 		flash        = require('connect-flash')
 
-  var mongoose = require('./config/database')
+  // var mongoose = require('./config/database')
+
+	var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/LoLStats1');
 
 
 
