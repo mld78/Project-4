@@ -9,7 +9,6 @@ var express = require('express'),
 		port        = process.env.PORT || 3000,
 		frontend = process.env.PWD + '/frontend/',
 		session      = require('express-session'),
-		passport     = require('passport'),
 		flash        = require('connect-flash')
 
   var mongoose = require('./config/database')
@@ -32,29 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(cookieParser())
 
-// app.get('/', function(){
-// 	console.log("something")
-// })
 
-
-// // set up view engine and path
-// app.set('view engine', 'html')
-// // app.use(htmlLayouts)
-// app.set("views","../frontend")
-
-// configure passport
-// app.use(session({ secret: 'LolStats' }))
-// app.use(passport.initialize())
-// // session implementaion
-// app.use(passport.session())
-// app.use(flash())
-//
-// // This middleware will allow us to use the current user in the layout
-// require('./config/passport')(passport)
-// app.use(function (req, res, next) {
-//   global.user = req.user
-//   next()
-// })
 
 // Validate content-type.
 app.use(validateContentType);
@@ -63,7 +40,7 @@ app.use(routes);
 
 app.use(addFailedAuthHeader);
 
-app.listen(3000);
+
 
 function validateContentType(req, res, next) {
   var methods = ['PUT', 'PATCH', 'POST'];

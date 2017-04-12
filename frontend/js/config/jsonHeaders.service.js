@@ -1,8 +1,4 @@
-(function() {
-  "use strict";
-
-  angular
-    .module("LolStats")
+angular.module("LoLStats")
     .factory("jsonHeadersService", jsonHeadersService);
 
   jsonHeadersService.$inject = ["$log"];
@@ -18,5 +14,3 @@
       return request;
     }
   }
-
-})();

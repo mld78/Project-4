@@ -1,8 +1,4 @@
-(function() {
-  "use strict";
-
-  angular
-    .module("LolStats")
+angular.module("LoLStats")
     .factory("authErrorRedirect", authErrorRedirect);
 
   authErrorRedirect.$inject = ["$log", "$q"];
@@ -35,5 +31,3 @@
       return($q.reject(err));
     }
   }
-
-})();

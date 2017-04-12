@@ -1,13 +1,9 @@
-(function() {
-  "use strict";
+angular.module("LoLStats")
+    .controller("LogInController", LogInController);
 
-  angular
-    .module("LolStats")
-    .controller("SignInController", SignInController);
+  LogInController.$inject = ["$log", "authService", "userService", "$state"];
 
-  SignInController.$inject = ["$log", "authService", "userService", "$state"];
-
-  function SignInController($log, authService, userService, $state) {
+  function LogInController($log, authService, userService, $state) {
     var self = this;
 
     // BINDINGS
@@ -36,7 +32,7 @@
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
-            $state.go('index');
+            $state.go('home');
           },
           // on error
           function(err) {
@@ -53,7 +49,7 @@
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
-            $state.go('index');
+            $state.go('home');
           },
           // on error
           function(err) {
@@ -62,6 +58,5 @@
         );
     }
 
-    $log.info("SignInController loaded!");
+    $log.info("LogInController loaded!");
   }
-})();

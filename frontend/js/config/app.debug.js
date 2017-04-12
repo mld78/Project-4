@@ -1,8 +1,4 @@
-(function() {
-  "use strict";
-
-  angular
-    .module("LolStats")
+angular.module("LoLStats")
     .config(debug);
 
   debug.$inject = ["$logProvider"];
@@ -12,4 +8,3 @@
     // console.
     $logProvider.debugEnabled(false);
   }
-})();

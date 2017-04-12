@@ -1,8 +1,4 @@
-(function () {
-  'use strict';
-
-  angular
-    .module('LolStats')
+angular.module('LoLStats')
     .factory("userService", userService);
 
   userService.$inject = ["$log", "$http"];
@@ -25,5 +21,3 @@
       return promise;
     }
   }
-
-})();

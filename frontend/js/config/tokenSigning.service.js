@@ -1,8 +1,4 @@
-(function() {
-  "use strict";
-
-  angular
-    .module("LolStats")
+angular.module("LoLStats")
     .factory("tokenSigningService", tokenSigningService);
 
   tokenSigningService.$inject = ["$log", "tokenService"];
@@ -21,5 +17,3 @@
       return request;
     }
   }
-
-})();

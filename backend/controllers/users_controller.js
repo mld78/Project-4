@@ -8,18 +8,12 @@ module.exports = {
   index: index
 };
 
-function index(req, res){
-  User.findAll(req.body)
-      .then(function(users){
-        res.json({
-          success: true,
-          message: 'Successfully retrieved all users.',
-          data: users
-        })
-      })
-      .catch(function(err){
-        next(err)
-      })
+function index(req, res, next){
+  User.find({}, function(err, users){
+    if(err) res.status(404).send(err)
+    res.status(200).send(users)
+  })
+
 
 }
 

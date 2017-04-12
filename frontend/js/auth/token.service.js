@@ -1,8 +1,4 @@
-(function () {
-  'use strict';
-
-  angular
-    .module('LolStats')
+  angular.module('LoLStats')
     .factory("tokenService", tokenService);
 
   tokenService.$inject = ["$log", "$window"];
@@ -37,5 +33,3 @@
       console.log("token destroyed, local storage: ", $window.localStorage);
     }
   }
-
-})();

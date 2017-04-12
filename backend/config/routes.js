@@ -4,10 +4,12 @@ var express = require('express'),
     bodyParser = require('body-parser'),
 // Used to manipulate POST methods
     methodOverride = require('method-override')
-    // passport = require("passport")
+
 var token = require('./token_auth')
 // Require controllers
 var usersController = require('../controllers/users_controller')
+
+
 // Routes helpers
 
 router.route('/api/users')

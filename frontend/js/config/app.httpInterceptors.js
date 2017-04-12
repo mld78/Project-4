@@ -1,8 +1,4 @@
-(function() {
-  "use strict";
-
-  angular
-    .module("LolStats")
+angular.module("LoLStats")
     .config(configure);
 
   configure.$inject = ["$httpProvider"];
@@ -13,5 +9,3 @@
     $httpProvider.interceptors.push("authErrorRedirect");
     console.log("http", $httpProvider.interceptors)
   }
-
-})();

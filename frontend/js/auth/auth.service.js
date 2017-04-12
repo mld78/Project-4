@@ -1,9 +1,5 @@
-(function () {
-  'use strict';
-
-  angular
-    .module('LolStats')
-    .factory("authService", authService);
+  angular.module('LoLStats')
+      .factory("authService", authService);
 
   authService.$inject = ["$log", "tokenService", "$http"];
 
@@ -47,5 +43,3 @@
       token.destroy();
     }
   }
-
-})();
