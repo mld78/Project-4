@@ -7,7 +7,10 @@ var express = require('express'),
     path = require('path'),
 		cookieParser = require('cookie-parser'),
 		port        = process.env.PORT || 3000,
-		frontend = process.env.PWD + '/frontend/'
+		frontend = process.env.PWD + '/frontend/',
+		session      = require('express-session'),
+		passport     = require('passport'),
+		flash        = require('connect-flash')
 
   var mongoose = require('./config/database')
 
@@ -29,9 +32,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(cookieParser())
 
-app.get('/', function(){
-	console.log("something")
-})
+// app.get('/', function(){
+// 	console.log("something")
+// })
 
 
 // // set up view engine and path

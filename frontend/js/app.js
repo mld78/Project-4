@@ -8,13 +8,9 @@ angular.module('LoLStats', ['ui.router', 'ui.bootstrap'])
 //States for the show pages
 function ViewRouter($stateProvider, $urlRouterProvider){
 
-         $urlRouterProvider.otherwise("/home");
+         $urlRouterProvider.otherwise("/");
 
          $stateProvider
-         .state('index', {
-           url: '/index',
-           templateUrl: 'index.html'
-         })
          .state('mastery', {
            url: '/mastery',
            templateUrl: 'mastery.html',
@@ -38,5 +34,13 @@ function ViewRouter($stateProvider, $urlRouterProvider){
          .state('home', {
            url: '/',
            templateUrl: 'home.html'
+         })
+         .state('login', {
+           url: '/login',
+           templateUrl: 'login.html'
+         })
+         .state('signup', {
+           url: '/signup',
+           templateUrl: 'signup.html'
          })
 }

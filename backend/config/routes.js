@@ -26,7 +26,7 @@ function authenticateAdmin(request, response, next) {
 
 // Root path
 router.get('/', function(request, response){
-	response.render('./frontend/home.html')
+	response.render('./login.html')
 })
 
 // Authentication Routes

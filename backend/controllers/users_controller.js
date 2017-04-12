@@ -4,7 +4,7 @@ var passport = require("passport"),
 // Authentication: sign up and log in
 
 function getSignup(request, response) {
-  response.render('./frontend/signup.html', { message: request.flash('signupMessage') });
+  response.render('./signup.html', { message: request.flash('signupMessage') });
 }
 
 function postSignup(request, response) {
@@ -17,13 +17,13 @@ function postSignup(request, response) {
 }
 
 function getLogin(request, response) {
-  response.render('./frontend/login.html', { message: request.flash('loginMessage') });
+  response.render('./login.html', { message: request.flash('loginMessage') });
 }
 
 function postLogin(request, response) {
   var loginProperty = passport.authenticate('local-login', {
-    successRedirect : 'frontend/home',
-    failureRedirect : 'frontend/login',
+    successRedirect : '/home',
+    failureRedirect : '/login',
     failureFlash : true
   })
 
