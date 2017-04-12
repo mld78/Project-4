@@ -4,26 +4,26 @@ var passport = require("passport"),
 // Authentication: sign up and log in
 
 function getSignup(request, response) {
-  response.render('./static_pages/signup.ejs', { message: request.flash('signupMessage') });
+  response.render('./frontend/signup.html', { message: request.flash('signupMessage') });
 }
 
 function postSignup(request, response) {
   var signupStrategy = passport.authenticate('local-signup', {
-    successRedirect : '/dashboard',
-    failureRedirect : '/signup',
+    successRedirect : 'frontend/home',
+    failureRedirect : 'frontend/signup',
     failureFlash : true
   });
   return signupStrategy(request, response);
 }
 
 function getLogin(request, response) {
-  response.render('./static_pages/login.ejs', { message: request.flash('loginMessage') });
+  response.render('./frontend/login.html', { message: request.flash('loginMessage') });
 }
 
 function postLogin(request, response) {
   var loginProperty = passport.authenticate('local-login', {
-    successRedirect : '/dashboard',
-    failureRedirect : '/login',
+    successRedirect : 'frontend/home',
+    failureRedirect : 'frontend/login',
     failureFlash : true
   })
 
@@ -32,35 +32,18 @@ function postLogin(request, response) {
 
 function getLogout(request, response) {
   request.logout()
-  response.redirect('/')
+  response.render('frontend/login.html')
 }
 
-// Facebook authentication
-
-function getFacebook(request, response, next) {
-  var signupStrategy = passport.authenticate('facebook', {
-    scope : 'email'
-  })
-
-  return signupStrategy(request, response, next)
-}
-
-function getFacebookCallback(request, response, next) {
-  var loginProperty = passport.authenticate('facebook', {
-    successRedirect : '/dashboard',
-    failureRedirect : './static_pages/login'
-  })
-  return loginProperty(request, response, next)
-}
 
 // Profile
 
 function showProfile(request, response) {
-  response.render('./user/profile')
+  response.render('./frontend/profile.html')
 }
 // Edit profile
 function editProfile(request, response) {
-  response.render(`./user/edit_profile.ejs`)
+  response.render(`./frontend/edit_profile.html`)
   // var id = request.params.id
   // User.findById({_id: id}, function(err, user) {
   //   if (err) throw err
@@ -97,7 +80,7 @@ function updateProfile(request, response){
     updatedUser.save(function(err, savedUser) {
       if (err) throw err
       // response.json(savedUser)
-      response.redirect('/profile')
+      response.redirect('frontend/profile')
     })
 
   })
@@ -112,23 +95,14 @@ function destroyUser(request, response) {
     User.remove({_id: id}, function(err) {
       if (err) response.json( {message: `Could not delete Method b/c: ${err}`} )
 
-      response.redirect('/login')
+      response.redirect('frontend/login')
     })
 
   // }
 }
 
 
-// Dashboard
 
-function dashboard(request, response){
-  User.findById(user.id)
-      .populate('completed_exercises.exercise')
-      .exec(function(err, user){
-        if (err) throw err
-        response.render('./user/dashboard', {completed_exercises: user.completed_exercises})
-      })
-}
 
 
 
@@ -138,10 +112,7 @@ module.exports = {
   getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout,
-  getFacebook: getFacebook,
-  getFacebookCallback: getFacebookCallback,
 
-  dashboard: dashboard,
   showProfile: showProfile,
   editProfile: editProfile,
   updateProfile: updateProfile,

@@ -11,15 +11,8 @@ var userSchema = new mongoose.Schema({
 		email: String,
 		password: String,
 		isAdmin: { type: Boolean, default: false }
-	},
-	facebook: {
-		id: String,
-		token: String,
-		email: String,
-		name: String
-	},
-	completed_exercises: [CompletedExercise.schema]
-})
+	}
+	})
 userSchema.methods.encrypt = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
 }
