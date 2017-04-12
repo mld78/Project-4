@@ -21,11 +21,11 @@ mongoose.connect('mongodb://localhost:27017/LoLStats1');
 
   var routes = require('./config/routes')
 
-app.use(cors())
+	require('dotenv').config();
 
+	app.use(cors())
 // mongoose.connect('mongodb://localhost/LolStats')
 
-require('dotenv').config();
 
 
 app.use(logger('dev'))

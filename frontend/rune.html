@@ -85,7 +85,7 @@
           Total marks selected: {{runes.totalMarks.length}}.
           <ul>
             <li ng-repeat="rune in runes.totalMarks track by $index">
-              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em> 
               <button type="button" class="btn btn-default" ng-click="runes.removeMark(rune)" > Remove Mark</button><hr>
             </li>
           </ul>

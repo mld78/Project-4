@@ -46,6 +46,8 @@ self.selectedMark = {}
 self.setMark = setMark
 self.totalMarks =[]
 self.removeMark = removeMark
+// self.moreThanOneMark = moreThanOneMark
+self.sameMarkCounter = 1
 
 
 function setMark(rune){
@@ -60,6 +62,22 @@ function removeMark(rune){
 	self.selectedMark = rune
 	self.totalMarks.splice(self.selectedMark, 1)
 }
+
+// function uniqueMarks(){
+// 	var result =[]
+// 	for (var i =0; i<totalMarks.length;i++){
+//
+// 	}
+// }
+
+
+
+
+
+
+
+
+
 
 //move a selected glyph from the available glyph list to the selected runes list
 self.selectedGlyph = {}
@@ -80,6 +98,16 @@ function removeGlyph(rune){
 	self.selectedGlyph = rune
 	self.totalGlyphs.splice(self.selectedGlyph, 1)
 }
+
+
+
+
+
+
+
+
+
+
 
 //move a selected seal from the available seal list to the selected runes list
 self.selectedSeal = {}
