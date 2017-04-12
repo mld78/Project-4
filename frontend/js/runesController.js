@@ -45,6 +45,7 @@
 self.selectedMark = {}
 self.setMark = setMark
 self.totalMarks =[]
+self.removeMark = removeMark
 
 
 function setMark(rune){
@@ -55,10 +56,16 @@ function setMark(rune){
   console.log(self.selectedMark)
 }
 
+function removeMark(rune){
+	self.selectedMark = rune
+	self.totalMarks.splice(self.selectedMark, 1)
+}
+
 //move a selected glyph from the available glyph list to the selected runes list
 self.selectedGlyph = {}
 self.setGlyph = setGlyph
 self.totalGlyphs =[]
+self.removeGlyph = removeGlyph
 
 
 function setGlyph(rune){
@@ -69,10 +76,16 @@ function setGlyph(rune){
   console.log(self.selectedGlyph)
 }
 
+function removeGlyph(rune){
+	self.selectedGlyph = rune
+	self.totalGlyphs.splice(self.selectedGlyph, 1)
+}
+
 //move a selected seal from the available seal list to the selected runes list
 self.selectedSeal = {}
 self.setSeal = setSeal
 self.totalSeals =[]
+self.removeSeal = removeSeal
 
 
 function setSeal(rune){
@@ -83,10 +96,16 @@ function setSeal(rune){
   console.log(self.selectedSeal)
 }
 
+function removeSeal(rune){
+	self.selectedSeal = rune
+	self.totalSeals.splice(self.selectedSeal, 1)
+}
+
 //move a selected quint from the available quint list to the selected runes list
 self.selectedQuint = {}
 self.setQuint = setQuint
 self.totalQuints =[]
+self.removeQuint = removeQuint
 
 
 function setQuint(rune){
@@ -95,6 +114,11 @@ function setQuint(rune){
   self.totalQuints.push(self.selectedQuint)
 }
   console.log(self.selectedQuint)
+}
+
+function removeQuint(rune){
+	self.selectedQuint = rune
+	self.totalQuints.splice(self.selectedQuint, 1)
 }
 
 

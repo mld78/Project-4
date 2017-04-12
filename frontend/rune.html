@@ -85,8 +85,8 @@
           Total marks selected: {{runes.totalMarks.length}}.
           <ul>
             <li ng-repeat="rune in runes.totalMarks track by $index">
-              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
-
+              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+              <button type="button" class="btn btn-default" ng-click="runes.removeMark(rune)" > Remove Mark</button><hr>
             </li>
           </ul>
 
@@ -97,7 +97,8 @@
         <!-- Selected glyphs go here, max 9: -->
         <ul>
           <li ng-repeat="rune in runes.totalGlyphs track by $index">
-            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            <button type="button" class="btn btn-default" ng-click="runes.removeGlyph(rune)" > Remove Glyph</button><hr>
 
           </li>
         </ul>
@@ -109,7 +110,8 @@
         <!-- Selected seals go here, max 9: -->
         <ul>
           <li ng-repeat="rune in runes.totalSeals track by $index">
-            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            <button type="button" class="btn btn-default" ng-click="runes.removeSeal(rune)" > Remove Seal</button><hr>
 
           </li>
         </ul>
@@ -120,7 +122,8 @@
         <!-- Selected quints go here, max 3: -->
         <ul>
           <li ng-repeat="rune in runes.totalQuints track by $index">
-            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em><hr>
+            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            <button type="button" class="btn btn-default" ng-click="runes.removeQuint(rune)" > Remove Quint</button><hr>
 
           </li>
         </ul>
