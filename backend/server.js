@@ -42,6 +42,8 @@ app.use(addFailedAuthHeader);
 
 
 
+
+
 function validateContentType(req, res, next) {
   var methods = ['PUT', 'PATCH', 'POST'];
   if (                                    // If the request is

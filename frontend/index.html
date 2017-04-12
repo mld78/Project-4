@@ -23,22 +23,29 @@
 	  <script src="./js/championFactory.js"></script>
 	  <script src="./js/itemFactory.js"></script>
 	  <script src="./js/login.controller.js"></script>
+	  <script src="./js/navbar.controller.js"></script>
 
   </head>
 
   <body>
-    <header>
+    <header ng-controller="NavbarController as vm">
+    <nav class="navbar navbar-default ">
+      <div class="container">
+            <a ui-sref-active="active" ui-sref="home" class="navbar-brand navbar-left">Home</a>
+            <a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="rune" class="navbar-brand">Runes</a>
+      			<a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="mastery" class="navbar-brand">Masteries</a>
+      			<a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="champion" class="navbar-brand">Champions</a>
+      			<a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="item" class="navbar-brand">Items</a>
+        <button ng-hide="vm.authService.isLoggedIn()" ui-sref="login" type="button" class="btn btn-default navbar-btn navbar-right">Log in</button>
+        <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">SLog out</button>
+      </div>
+    </nav>
+  </header>
+  <br>
+
       <h1 class="text-center">League of Stat Building</h1>
 
-    </header>
 
-    <nav class="tabs text-center">
-      <a ui-sref-active="active" ui-sref="home">Home</a>
-      <a ui-sref-active="active" ui-sref="rune">Runes</a>
-    			<a ui-sref-active="active" ui-sref="mastery">Masteries</a>
-    			<a ui-sref-active="active" ui-sref="champion">Champions</a>
-    			<a ui-sref-active="active" ui-sref="item">Items</a>
-    			<!-- <a ui-sref-active="active" ui-sref="">User</a> -->
     		</nav>
 
   <main ui-view></main>

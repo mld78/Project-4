@@ -1,5 +1,7 @@
 var mongoose = require('mongoose')
 
+mongoose.Promise = require('bluebird')
+
 // Use different database URIs based on whether an env var exists.
 var dbUri = process.env.MONGODB_URI || 'mongodb://localhost/LolStats'
             // 'mongodb://localhost/' + process.env.LOCAL_DB

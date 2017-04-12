@@ -61,3 +61,8 @@ nav.tabs a {
 
 /* whaaaaaaat. check out the final helper of the readme! */
 nav.tabs a.active { background: rgba(255,255,255,1);}
+
+a {
+  color: black;
+  font-weight: bold;
+}
