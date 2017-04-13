@@ -33,7 +33,7 @@
       <div class="container">
             <a ui-sref-active="active" ui-sref="home" class="navbar-brand navbar-left">Home</a>
             <a  ui-sref-active="active" ui-sref="rune" class="navbar-brand">Runes</a>
-      			<a  ui-sref-active="active" ui-sref="mastery" class="navbar-brand">Masteries</a>
+      			<a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="mastery" class="navbar-brand">Masteries</a>
       			<a  ui-sref-active="active" ui-sref="champion" class="navbar-brand">Champions</a>
       			<a  ui-sref-active="active" ui-sref="item" class="navbar-brand">Items</a>
         <button ng-hide="vm.authService.isLoggedIn()" ui-sref="login" type="button" class="btn btn-default navbar-btn navbar-right">Log in</button>

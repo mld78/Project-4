@@ -42,6 +42,7 @@
 		<ul class="well well-lg" >
       <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'blue'" ng-show="rune.rune.tier == runes.selectedTier">
         {{rune.name}}: <em>{{rune.description}}</em>
+        <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}">
         <button type="button" class="btn btn-default" ng-click="runes.setGlyph(rune)"> Add Glyph</button> <hr>
       </li>
     </ul>
