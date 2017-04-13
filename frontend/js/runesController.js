@@ -76,6 +76,10 @@ function setMark(rune){
 
 function removeMark(rune){
 	self.selectedMark = rune
+	if (self.totalMarksCount<9){
+		var duplicateMark = self.totalMarks.find(function(rune){
+			return rune.rune.id == self.selectedMark.id
+		})
 	self.totalMarks.splice(self.selectedMark, 1)
 }
 
@@ -166,6 +170,10 @@ function removeSeal(rune){
 	self.totalSeals.splice(self.selectedSeal, 1)
 }
 
+
+
+
+
 //move a selected quint from the available quint list to the selected runes list
 self.selectedQuint = {}
 self.setQuint = setQuint
@@ -192,6 +200,10 @@ function setQuint(rune){
 }
   console.log(self.selectedQuint)
 }
+
+
+
+
 
 function removeQuint(rune){
 	self.selectedQuint = rune
