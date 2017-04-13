@@ -2,10 +2,12 @@
 	angular.module("LoLStats")
 		.controller("MasteriesController", MasteriesController)
 
-  MasteriesController.$inject = ["MasteryFactory"]
+  MasteriesController.$inject = ["MasteryFactory", "authService"]
 
-	function MasteriesController(MasteryFactory){
+	function MasteriesController(MasteryFactory, authService){
 		var self = this
+
+		self.authService = authService
 
 		MasteryFactory.show()
     .success(function(data) {
