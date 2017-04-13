@@ -15,7 +15,9 @@ var express = require('express'),
 
 	var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/LoLStats1');
+var db = process.env.MONGODB_URI || 'mongodb://localhost/LoLStats1'
+mongoose.connect(db);
+
 
 
 
