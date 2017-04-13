@@ -2,10 +2,12 @@
 	angular.module("LoLStats")
 		.controller("ChampionsController", ChampionsController)
 
-  ChampionsController.$inject = ["ChampionFactory"]
+  ChampionsController.$inject = ["ChampionFactory", "authService"]
 
-	function ChampionsController(ChampionFactory){
+	function ChampionsController(ChampionFactory, authService){
 		var self = this
+
+		self.authService = authService
 
 		ChampionFactory.show()
     .success(function(data) {

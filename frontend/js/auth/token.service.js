@@ -6,7 +6,7 @@
   function tokenService($log, $window) {
     $log.info("token service loaded!");
 
-    var TOKEN_KEY = 'mikesaidtochangethis';
+    var TOKEN_KEY = 'jamessaidtochangethis';
     var service = {
       store:    store,
       retrieve: retrieve,

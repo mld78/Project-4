@@ -2,10 +2,12 @@
 	angular.module("LoLStats")
 		.controller("ItemsController", ItemsController)
 
-  ItemsController.$inject = ["ItemFactory"]
+  ItemsController.$inject = ["ItemFactory", "authService"]
 
-	function ItemsController(ItemFactory){
+	function ItemsController(ItemFactory, authService){
 		var self = this
+
+		self.authService = authService
 
 		ItemFactory.show()
     .success(function(data) {

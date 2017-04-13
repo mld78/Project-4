@@ -2,9 +2,9 @@ angular.module("LoLStats")
         .controller("UserController", UserController)
 
 
-UserController.$inject = ["$http"]
+UserController.$inject = ["$http", "$state", "authService"]
 
-function UserController($http){
+function UserController($http, $state, authService){
   var selfUser = this
 
 
@@ -13,6 +13,7 @@ function UserController($http){
   selfUser.editUser = editUser
   selfUser.setUser = setUser
   selfUser.currentUser = {}
+  selfUser.authService = authService
 
 
 
@@ -23,7 +24,6 @@ function UserController($http){
     .get('/api/me')
     .then(function(response){
       selfUser.currentUser = response.data.user
-      console.log(selfUser.currentUser)
     })
   }
   getUser()
@@ -35,10 +35,12 @@ function setUser(user){
 
 
   function editUser(user){
+    console.log(selfUser.currentUser)
     $http
-      .patch('/api/me', self.currentUser)
+      .patch('/api/me', selfUser.currentUser)
       .then(function(response){
         getUser()
+        $state.go('profile')
       })
       selfUser.currentUser = {}
   }
@@ -47,7 +49,9 @@ function setUser(user){
     $http
       .delete("/api/me" )
       .then(function(response){
-        getUser()
+        // getUser()
+        selfUser.authService.logOut()
+
       })
   }
 
