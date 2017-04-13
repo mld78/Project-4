@@ -29,6 +29,7 @@
 		<ul class="well well-lg" >
       <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
         {{rune.name}}: <em>{{rune.description}}</em>
+        <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}">
         <button type="button" class="btn btn-default" ng-click="runes.setMark(rune)"> Add Mark</button>
         <hr>
       </li>
@@ -55,6 +56,7 @@
 		<ul class="well well-lg" >
       <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'yellow'" ng-show="rune.rune.tier == runes.selectedTier">
         {{rune.name}}: <em>{{rune.description}}</em>
+        <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}">
         <button type="button" class="btn btn-default" ng-click="runes.setSeal(rune)"> Add Seal</button> <hr>
       </li>
     </ul>
@@ -67,6 +69,7 @@
 		<ul class="well well-lg" >
       <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'black'" ng-show="rune.rune.tier == runes.selectedTier" ng-model="runes.selectedRune">
         {{rune.name}}: <em>{{rune.description}}</em>
+        <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}">
           <button type="button" class="btn btn-default" ng-click="runes.setQuint(rune)"> Add Seal</button><hr>
       </li>
     </ul>
@@ -83,10 +86,10 @@
   <div class="well well-lg">
 
       <div class="selected-Runes-marks">
-          Total marks selected: {{runes.totalMarks.length}}.
+          Total marks selected: {{runes.totalMarks}}.
           <ul>
             <li ng-repeat="rune in runes.uniqueMarks track by $index">
-              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>  X {{runes.sameMarkCounter}}
+              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
               <button type="button" class="btn btn-default" ng-click="runes.removeMark(rune)" > Remove Mark</button><hr>
             </li>
           </ul>

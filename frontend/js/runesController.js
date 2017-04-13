@@ -42,70 +42,41 @@
 
 
 //move a selected mark from the available mark list to the selected runes list
-// self.selectedMark = {}
-// self.setMark = setMark
-// // self.getUniqueMarks = getUniqueMarks
-// self.uniqueMarks =[]
-// self.duplicateMarks=[]
-// self.totalMarks = []
-// self.removeMark = removeMark
-//
+self.selectedMark = {}
+self.setMark = setMark
+
+self.uniqueMarks =[]
+self.duplicateMarks=[]
+self.totalMarks = 0
+self.removeMark = removeMark
+
 // self.sameMarkCounter = 1
-//
-// function setMark(rune){
-// 	self.selectedMark = rune
-//
-// 	if (self.totalMarks.length === 0){
-// 		self.uniqueMarks.push(self.selectedMark)
-// 		// self.totalMarks.push(self.selectedMark)
-// 	} else if (self.totalMarks.length < 9)  {
-// 			for (var i = 0; i<=self.totalMarks.length-1; i++){
-//   			if(self.selectedMark.id === self.totalMarks[i].id){
-//       			self.duplicateMarks.push(self.selectedMark)
-//       			// self.totalMarks.push(self.selectedMark)
-// 						// self.sameMarkCounter++
-//
-// 						console.log(self.uniqueMarks)
-// 						console.log(self.duplicateMarks)
-// 						console.log(self.totalMarks)
-//     			}
-// 				}
-// 				self.uniqueMarks.push(self.selectedMark)
-// }
-//
-//   console.log(self.selectedMark.id)
-// }
 
+function setMark(rune){
+	self.selectedMark = rune
 
-// 
-// self.selectedfruit = {}
-// self.setfruit = setfruit
-// // self.getUniquefruits = getUniquefruits
-// self.uniquefruits =[]
-// self.duplicatefruits=[]
-// self.totalfruits = []
-// self.removefruit = removefruit
-//
-// self.samefruitCounter = 0
-//
-// function setfruit(rune){
-// 	self.selectedfruit = rune
-//
-// 	if (self.totalfruits === 0){
-// 		self.uniquefruits.push(self.selectedfruit)
-// 		self.totalfruits.push(self.selectedfruit)
-// 	}
-// 	while (self.totalfruits.length< 9) {
-// 		if (self.selectedfruit.id === self.uniquefruits[i].id){
-// 				self.duplicatedfruits.push(self.selectedfruit)
-// 				self.totalfruits.push(self.selectedfruit)
-// 			} else {
-// 				self.uniquefruits.push(self.selectedfrui)
-// 				self.totalfruits.push(self.selectedfruit)
-// 			}
-//
-// 	}
-// }
+	if (self.totalMarks.length === 0){
+		self.uniqueMarks.push(self.selectedMark)
+		self.totalMarks.push(self)
+		console.log(self.uniqueMarks.length)
+		console.log(self.totalMarks.length)
+	}
+	else if (self.totalMarks.length < 9){
+		for (var i = 0; i<self.uniqueMarks.length; i++){
+			if (self.selectedMark.name === self.uniqueMarks[i].name){
+				self.duplicateMarks.push(self.selectedMark)
+			}else {
+				self.uniqueMarks.push(self.selectedMark)
+			}
+
+		}
+	}
+
+	else {
+		return console.log(self.selectedMark.name)
+	}
+
+}
 
 
 

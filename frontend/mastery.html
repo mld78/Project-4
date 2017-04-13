@@ -1,8 +1,8 @@
 <h1>Coming Soon....</h1>
 
 <div class="" ng-show="self.authService.isLoggedIn()">
+  <ul>
+    <li ng-repeat="mastery in masteries.masteryList">{{mastery.name}}: {{mastery.description}}</li>
+  </ul>
 
-<ul>
-  <li ng-repeat="mastery in masteries.masteryList">{{mastery.name}}: {{mastery.description}}</li>
-</ul>
 </div>
