@@ -1,3 +1,4 @@
+<div class="" ng-show="selfUser.authService.isLoggedIn()">
 
 <p>{{selfUser.currentUser.name}}
   <br>
@@ -5,3 +6,4 @@
 
    <button type="button" name="edit" ui-sref="editProfile">Edit</button>
    <button ng-click="selfUser.deleteUser()" type="button" name="edit" >Delete Account</button>
+ </div>

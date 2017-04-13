@@ -7,6 +7,7 @@ UserController.$inject = ["$http", "$state", "authService"]
 function UserController($http, $state, authService){
   var selfUser = this
 
+  self.authService = authService
 
   selfUser.getUser = getUser
   selfUser.deleteUser = deleteUser
