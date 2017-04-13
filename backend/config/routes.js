@@ -8,6 +8,7 @@ var express = require('express'),
 var token = require('./token_auth')
 // Require controllers
 var usersController = require('../controllers/users_controller')
+var runesController = require('../controllers/runes_controller')
 
 
 // Routes helpers
@@ -21,5 +22,8 @@ router.route('/api/me')
   .get(token.authenticate, usersController.me)
   .patch(token.authenticate, usersController.update)
   .delete(token.authenticate, usersController.destroy)
+
+router.route('/runes')
+  .get(runesController.getRunes)
 
 module.exports = router

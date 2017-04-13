@@ -9,8 +9,10 @@
 
     RuneFactory.show()
     .success(function(data) {
-      for(rune in data.data) {
-        self.runeList.push(data.data[rune])
+			console.log(JSON.parse(data))
+			var runes = JSON.parse(data).data
+      for(rune in runes) {
+        self.runeList.push(runes[rune])
       }
       console.log(self.runeList)
       console.log("Testing 123")
@@ -47,7 +49,7 @@ self.setMark = setMark
 
 self.uniqueMarks =[]
 self.duplicateMarks=[]
-self.totalMarks = 0
+self.totalMarks = []
 self.removeMark = removeMark
 
 // self.sameMarkCounter = 1
@@ -57,11 +59,12 @@ function setMark(rune){
 
 	if (self.totalMarks.length === 0){
 		self.uniqueMarks.push(self.selectedMark)
-		self.totalMarks.push(self)
+
 		console.log(self.uniqueMarks.length)
 		console.log(self.totalMarks.length)
+
 	}
-	else if (self.totalMarks.length < 9){
+	else {
 		for (var i = 0; i<self.uniqueMarks.length; i++){
 			if (self.selectedMark.name === self.uniqueMarks[i].name){
 				self.duplicateMarks.push(self.selectedMark)
@@ -70,10 +73,6 @@ function setMark(rune){
 			}
 
 		}
-	}
-
-	else {
-		return console.log(self.selectedMark.name)
 	}
 
 }
@@ -103,15 +102,29 @@ self.selectedGlyph = {}
 self.setGlyph = setGlyph
 self.totalGlyphs =[]
 self.removeGlyph = removeGlyph
+self.totalGlyphsCount = 0
 
 
 function setGlyph(rune){
   self.selectedGlyph = rune
-  if (self.totalGlyphs.length<9){
-  self.totalGlyphs.push(self.selectedGlyph)
+  if (self.totalGlyphsCount<9){
+		var duplicateGlyph = self.totalGlyphs.find(function(rune){
+			return rune.rune.id == self.selectedGlyph.id
+		})
+		console.log(duplicateGlyph)
+		if (!duplicateGlyph){
+			self.totalGlyphs.push({count:1, rune:self.selectedGlyph})
+		}else{
+			var currentGlyph = self.totalGlyphs[self.totalGlyphs.indexOf(duplicateGlyph)]
+			currentGlyph.count++
+		}
+			self.totalGlyphsCount++
+
 }
   console.log(self.selectedGlyph)
 }
+
+
 
 function removeGlyph(rune){
 	self.selectedGlyph = rune

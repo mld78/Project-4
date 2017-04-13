@@ -86,7 +86,7 @@
   <div class="well well-lg">
 
       <div class="selected-Runes-marks">
-          Total marks selected: {{runes.totalMarks}}.
+          Total marks selected: {{runes.totalMarks.length}}.
           <ul>
             <li ng-repeat="rune in runes.uniqueMarks track by $index">
               {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
@@ -97,11 +97,11 @@
       </div>
 
       <div class="selected-Runes-glyphs">
-        Total glyphs selected: {{runes.totalGlyphs.length}}.
+        Total glyphs selected: {{runes.totalGlyphsCount}}.
         <!-- Selected glyphs go here, max 9: -->
         <ul>
           <li ng-repeat="rune in runes.totalGlyphs track by $index">
-            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
             <button type="button" class="btn btn-default" ng-click="runes.removeGlyph(rune)" > Remove Glyph</button><hr>
 
           </li>
