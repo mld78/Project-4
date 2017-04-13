@@ -29,7 +29,7 @@
 		<ul class="well well-lg" >
       <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
         {{rune.name}}: <em>{{rune.description}}</em>
-        <button type="button" class="btn btn-default" ng-click="runes.setMark(rune)" > Add Mark</button>
+        <button type="button" class="btn btn-default" ng-click="runes.setMark(rune)"> Add Mark</button>
         <hr>
       </li>
     </ul>
@@ -84,8 +84,8 @@
       <div class="selected-Runes-marks">
           Total marks selected: {{runes.totalMarks.length}}.
           <ul>
-            <li ng-repeat="rune in runes.totalMarks track by $index">
-              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em> 
+            <li ng-repeat="rune in runes.uniqueMarks track by $index">
+              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>  X {{runes.sameMarkCounter}}
               <button type="button" class="btn btn-default" ng-click="runes.removeMark(rune)" > Remove Mark</button><hr>
             </li>
           </ul>
