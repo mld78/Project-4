@@ -24,6 +24,7 @@
 	  <script src="./js/itemFactory.js"></script>
 	  <script src="./js/login.controller.js"></script>
 	  <script src="./js/navbar.controller.js"></script>
+	  <script src="./js/userController.js"></script>
 
   </head>
 
@@ -37,8 +38,8 @@
       			<a  ui-sref-active="active" ui-sref="champion" class="navbar-brand">Champions</a>
       			<a  ui-sref-active="active" ui-sref="item" class="navbar-brand">Items</a>
         <button ng-hide="vm.authService.isLoggedIn()" ui-sref="login" type="button" class="btn btn-default navbar-btn navbar-right">Log in</button>
-        <button ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="profile" type="button" class="btn btn-default navbar-btn navbar-right">Profile</button>
-        <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Log out</button>
+        <button ng-show="vm.authService.isLoggedIn()" ui-sref="profile" type="button" class="btn btn-default navbar-btn navbar-right">Profile</button>
+        <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" ui-sref="login" type="button" class="btn btn-default navbar-btn navbar-right">Log out</button>
       </div>
     </nav>
   </header>

@@ -44,12 +44,12 @@ function create(req, res, next) {
 
 function me(req, res, next) {
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({_id: req.decoded._id}).exec()
     .then(function(user) {
       res.json({
         success: true,
         message: 'Successfully retrieved user data.',
-        data: user
+        user: user
       });
     })
     .catch(function(err) {

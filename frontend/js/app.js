@@ -42,7 +42,13 @@ function ViewRouter($stateProvider, $urlRouterProvider){
          })
          .state('profile', {
            url: '/profile',
-           templateUrl: 'profile.html'
+           templateUrl: 'profile.html',
+           controller: 'UserController as selfUser'
+         })
+         .state('editProfile', {
+           url: '/editProfile',
+           templateUrl: 'editProfile.html',
+           controller: 'UserController as selfUser'
          })
 
 }
