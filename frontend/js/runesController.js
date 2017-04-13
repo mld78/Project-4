@@ -46,35 +46,28 @@
 //move a selected mark from the available mark list to the selected runes list
 self.selectedMark = {}
 self.setMark = setMark
-
-self.uniqueMarks =[]
-self.duplicateMarks=[]
-self.totalMarks = []
+self.totalMarks =[]
 self.removeMark = removeMark
+self.totalMarksCount = 0
 
-// self.sameMarkCounter = 1
 
 function setMark(rune){
-	self.selectedMark = rune
-
-	if (self.totalMarks.length === 0){
-		self.uniqueMarks.push(self.selectedMark)
-
-		console.log(self.uniqueMarks.length)
-		console.log(self.totalMarks.length)
-
-	}
-	else {
-		for (var i = 0; i<self.uniqueMarks.length; i++){
-			if (self.selectedMark.name === self.uniqueMarks[i].name){
-				self.duplicateMarks.push(self.selectedMark)
-			}else {
-				self.uniqueMarks.push(self.selectedMark)
-			}
-
+  self.selectedMark = rune
+  if (self.totalMarksCount<9){
+		var duplicateMark = self.totalMarks.find(function(rune){
+			return rune.rune.id == self.selectedMark.id
+		})
+		console.log(duplicateMark)
+		if (!duplicateMark){
+			self.totalMarks.push({count:1, rune:self.selectedMark})
+		}else{
+			var currentMark = self.totalMarks[self.totalMarks.indexOf(duplicateMark)]
+			currentMark.count++
 		}
-	}
+			self.totalMarksCount++
 
+}
+  console.log(self.selectedMark)
 }
 
 
@@ -146,12 +139,24 @@ self.selectedSeal = {}
 self.setSeal = setSeal
 self.totalSeals =[]
 self.removeSeal = removeSeal
+self.totalSealsCount = 0
 
 
 function setSeal(rune){
   self.selectedSeal = rune
-  if (self.totalSeals.length < 9){
-  self.totalSeals.push(self.selectedSeal)
+  if (self.totalSealsCount<9){
+		var duplicateSeal = self.totalSeals.find(function(rune){
+			return rune.rune.id == self.selectedSeal.id
+		})
+		console.log(duplicateSeal)
+		if (!duplicateSeal){
+			self.totalSeals.push({count:1, rune:self.selectedSeal})
+		}else{
+			var currentSeal = self.totalSeals[self.totalSeals.indexOf(duplicateSeal)]
+			currentSeal.count++
+		}
+			self.totalSealsCount++
+
 }
   console.log(self.selectedSeal)
 }
@@ -166,12 +171,24 @@ self.selectedQuint = {}
 self.setQuint = setQuint
 self.totalQuints =[]
 self.removeQuint = removeQuint
+self.totalQuintsCount = 0
 
 
 function setQuint(rune){
   self.selectedQuint = rune
-  if (self.totalQuints.length<3){
-  self.totalQuints.push(self.selectedQuint)
+  if (self.totalQuintsCount<3){
+		var duplicateQuint = self.totalQuints.find(function(rune){
+			return rune.rune.id == self.selectedQuint.id
+		})
+		console.log(duplicateQuint)
+		if (!duplicateQuint){
+			self.totalQuints.push({count:1, rune:self.selectedQuint})
+		}else{
+			var currentQuint = self.totalQuints[self.totalQuints.indexOf(duplicateQuint)]
+			currentQuint.count++
+		}
+			self.totalQuintsCount++
+
 }
   console.log(self.selectedQuint)
 }

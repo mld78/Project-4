@@ -86,10 +86,10 @@
   <div class="well well-lg">
 
       <div class="selected-Runes-marks">
-          Total marks selected: {{runes.totalMarks.length}}.
+          Total marks selected: {{runes.totalMarksCount}}.
           <ul>
-            <li ng-repeat="rune in runes.uniqueMarks track by $index">
-              {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            <li ng-repeat="rune in runes.totalMarks track by $index">
+              {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
               <button type="button" class="btn btn-default" ng-click="runes.removeMark(rune)" > Remove Mark</button><hr>
             </li>
           </ul>
@@ -110,11 +110,11 @@
       </div>
 
       <div class="selected-Runes-seals">
-        Total seals selected: {{runes.totalSeals.length}}.
+        Total seals selected: {{runes.totalSealsCount}}.
         <!-- Selected seals go here, max 9: -->
         <ul>
           <li ng-repeat="rune in runes.totalSeals track by $index">
-            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
             <button type="button" class="btn btn-default" ng-click="runes.removeSeal(rune)" > Remove Seal</button><hr>
 
           </li>
@@ -122,11 +122,11 @@
 
       </div>
       <div class="selected-Runes-quints">
-        Total quints selected: {{runes.totalQuints.length}}.
+        Total quints selected: {{runes.totalQuintsCount}}.
         <!-- Selected quints go here, max 3: -->
         <ul>
           <li ng-repeat="rune in runes.totalQuints track by $index">
-            {{rune.name}}: <em>{{rune.description}}, Tier: {{rune.rune.tier}}</em>
+            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
             <button type="button" class="btn btn-default" ng-click="runes.removeQuint(rune)" > Remove Quint</button><hr>
 
           </li>
