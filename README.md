@@ -32,6 +32,10 @@ An MVP will be to successfully build out each model and start linking up the sta
 5. Start the server with `nodemon` or `node server.js`.
 6. Navigate to `localhost:3000`, and you're good to go!
 
+### Unsolved Problems:
+
+On the rune page I am still working to pull out the statistical data based on the selected runes to show the base stats added together so a User can see specifically the results of their rune choices.  Further work down the road will be to make the site more engaging from a style standpoint as well as beginning to work on the other 3 pages so the application is fully functional for a player to theorycraft builds before getting into the game.
+
 
 **WireFrames:**  
 Index:  
