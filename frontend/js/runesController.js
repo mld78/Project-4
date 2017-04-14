@@ -135,7 +135,22 @@ function setGlyph(rune){
 
 function removeGlyph(rune){
 	self.selectedGlyph = rune
-	self.totalGlyphs.splice(self.selectedGlyph, 1)
+	console.log(self.totalGlyphs)
+	if (self.totalGlyphsCount>1){
+		if (rune.count>1){
+			rune.count--
+		}else {
+			self.totalGlyphs.splice(self.totalGlyphs.indexOf(self.selectedGlyph), 1)
+		}
+			self.totalGlyphsCount--
+
+}else {
+	self.totalGlyphs =[]
+
+	self.totalGlyphsCount = 0
+}
+
+  // console.log(self.selectedMark)
 }
 
 
@@ -177,9 +192,23 @@ function setSeal(rune){
 
 function removeSeal(rune){
 	self.selectedSeal = rune
-	self.totalSeals.splice(self.selectedSeal, 1)
+	console.log(self.totalSeals)
+	if (self.totalSealsCount>1){
+		if (rune.count>1){
+			rune.count--
+		}else {
+			self.totalSeals.splice(self.totalSeals.indexOf(self.selectedSeal), 1)
+		}
+			self.totalSealsCount--
+
+}else {
+	self.totalSeals =[]
+
+	self.totalSealsCount = 0
 }
 
+  // console.log(self.selectedMark)
+}
 
 
 
@@ -213,11 +242,24 @@ function setQuint(rune){
 
 
 
-
-
 function removeQuint(rune){
 	self.selectedQuint = rune
-	self.totalQuints.splice(self.selectedQuint, 1)
+	console.log(self.totalQuints)
+	if (self.totalQuintsCount>1){
+		if (rune.count>1){
+			rune.count--
+		}else {
+			self.totalQuints.splice(self.totalQuints.indexOf(self.selectedQuint), 1)
+		}
+			self.totalQuintsCount--
+
+}else {
+	self.totalQuints =[]
+
+	self.totalQuintsCount = 0
+}
+
+  // console.log(self.selectedMark)
 }
 
 
