@@ -8,7 +8,7 @@ angular.module('LoLStats', ['ui.router', 'ui.bootstrap'])
 //States for the show pages
 function ViewRouter($stateProvider, $urlRouterProvider){
 
-         $urlRouterProvider.otherwise("/about");
+
 
          $stateProvider
          .state('mastery', {
@@ -51,8 +51,10 @@ function ViewRouter($stateProvider, $urlRouterProvider){
            controller: 'UserController as selfUser'
          })
          .state('about', {
-           url: '/',
+           url: '/about',
            templateUrl: 'about.html'
          })
+         
+          $urlRouterProvider.otherwise("/");
 
 }

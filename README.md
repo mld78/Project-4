@@ -12,27 +12,40 @@ MEAN stack, Javascript, Html, Bootstrap, CSS, and the League of Legends [API](ht
 ### Process:
 [Trello](https://trello.com/b/cWwcNknZ/project-4)
 
-Why I want to make this app? 
+Why I want to make this app?
 
-This is one of the most popular games in the world and yet has very few applications outside of itself to optimize the experience. The purpose of this app would be to add an additional function to the game and benefit the player experience. 
+This is one of the most popular games in the world and yet has very few applications outside of itself to optimize the experience. The purpose of this app would be to add an additional function to the game and benefit the player experience.
 
 There is going to be a static page for each model: Mastery, Rune, Champion, and Item. Once a user picks out each one the math will all add together with the power of magic (or what I'm pretty much going to spend a long time trying to figure out the code for).
 
 An MVP will be to successfully build out each model and start linking up the stats from each model. There is a lot of math due to scaling stats for certain things so I expect this project as a whole will take a lot longer than the 6 days before the presentation.
 
+### Installation:
+
+1. Clone or download this repository to your machine.
+2. Confirm you have `Node.js` installed by running `node -v`.
+
+> If you aren't getting a version number, head over to https://nodejs.org/en/download/ and download it.
+
+3. `cd` into the root of your local copy of the app and run `npm install`.
+4. Start the database server with `mongod`.
+5. Start the server with `nodemon` or `node server.js`.
+6. Navigate to `localhost:3000`, and you're good to go!
+
+
 **WireFrames:**  
 Index:  
 <img src="Readme_assets/Index.jpg" width="300px">  
-  
+
   Runes:  
   <img src="Readme_assets/Runes.jpg" width="300px">  
-    
+
   Masteries:  
   <img src="Readme_assets/Masteries.jpg" width="300px">  
-    
+
   Champion Select:  
   <img src="Readme_assets/Champion.jpg" width="300px">  
-    
+
   Items:  
   <img src="Readme_assets/Items.jpg" width="300px">
 
@@ -42,5 +55,3 @@ Index:
 ###Next Steps:
 
 ###Unsolved Problems:
-
-
