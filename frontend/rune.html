@@ -9,7 +9,7 @@
 		<div class="well well-lg">Some content</div>
 	</div> -->
 
-
+<div ng-show-"self.authService.isLoggedIn()">
 <!--List of runes seperated by type  -->
 <section class="select-runes col-md-4">
 <h3>Select your runes:</h3>
@@ -29,7 +29,7 @@
 		<ul class="well well-lg" >
       <li style="list-style:none" ng-repeat="rune in runes.runeList" ng-if="rune.rune.type == 'red'" ng-show="rune.rune.tier == runes.selectedTier" >
         {{rune.name}}: <em>{{rune.description}}</em>
-        <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}">
+        <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}" ng-mouseover="rune.rune.name">
         <button type="button" class="btn btn-default" ng-click="runes.setMark(rune)"> Add Mark</button>
         <hr>
       </li>
@@ -144,10 +144,11 @@
 
 <section class="Rune_stats col-md-4">
   <div class="">
-    Rune Stats: <br>
+    <h3>Rune Stats: </h3><br> <hr>
       <div class="">
 
       </div>
 
   </div>
 </section>
+</div>

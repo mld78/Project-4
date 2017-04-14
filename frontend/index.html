@@ -30,10 +30,10 @@
 
   <body>
     <header ng-controller="NavbarController as vm">
-    <nav class="navbar navbar-default ">
+    <nav class="navbar navbar-default " id="nav">
       <div class="container">
             <a ng-hide="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="home" class="navbar-brand navbar-left">Home</a>
-            <a  ui-sref-active="active" ui-sref="rune" class="navbar-brand">Runes</a>
+            <a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="rune" class="navbar-brand">Runes</a>
       			<a ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="mastery" class="navbar-brand">Masteries</a>
       			<a  ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="champion" class="navbar-brand">Champions</a>
       			<a  ng-show="vm.authService.isLoggedIn()" ui-sref-active="active" ui-sref="item" class="navbar-brand">Items</a>
@@ -45,7 +45,7 @@
   </header>
   <br>
 
-      <h1 class="text-center">League of Stat Building</h1>
+      <h1 class="text-center">League of Stat Building <img src="./img/logo-lol-smaller.png" alt=""></h1>
 
 
     		</nav>

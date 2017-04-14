@@ -46,6 +46,13 @@ header h4 {
 	margin: 0 auto;
 }*/*/
 
+
+
+
+#nav {
+  background-color: navy
+}
+
 nav.tabs {
     background: #4d5d70;
     max-width: 75%;
