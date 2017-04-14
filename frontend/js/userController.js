@@ -2,7 +2,7 @@ angular.module("LoLStats")
         .controller("UserController", UserController)
 
 
-UserController.$inject = ["$http", "$state", "authService"]
+UserController.$inject = ["$http", "$state", "authService", "tokenService"]
 
 function UserController($http, $state, authService){
   var selfUser = this
