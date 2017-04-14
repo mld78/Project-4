@@ -89,7 +89,8 @@
           Total marks selected: {{runes.totalMarksCount}}.
           <ul>
             <li ng-repeat="rune in runes.totalMarks track by $index">
-              {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
+              {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em>
+              <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}"> x {{rune.count}}
               <button type="button" class="btn btn-default" ng-click="runes.removeMark(rune)" > Remove Mark</button><hr>
             </li>
           </ul>
@@ -101,7 +102,8 @@
         <!-- Selected glyphs go here, max 9: -->
         <ul>
           <li ng-repeat="rune in runes.totalGlyphs track by $index">
-            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
+            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em>
+            <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}">x {{rune.count}}
             <button type="button" class="btn btn-default" ng-click="runes.removeGlyph(rune)" > Remove Glyph</button><hr>
 
           </li>
@@ -114,7 +116,8 @@
         <!-- Selected seals go here, max 9: -->
         <ul>
           <li ng-repeat="rune in runes.totalSeals track by $index">
-            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
+            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em>
+            <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}"> x {{rune.count}}
             <button type="button" class="btn btn-default" ng-click="runes.removeSeal(rune)" > Remove Seal</button><hr>
 
           </li>
@@ -126,7 +129,8 @@
         <!-- Selected quints go here, max 3: -->
         <ul>
           <li ng-repeat="rune in runes.totalQuints track by $index">
-            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em> x {{rune.count}}
+            {{rune.rune.name}}: <em>{{rune.rune.description}}, Tier: {{rune.rune.rune.tier}}</em>
+            <img ng-src="{{'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/rune/' + rune.image.full}}"> x {{rune.count}}
             <button type="button" class="btn btn-default" ng-click="runes.removeQuint(rune)" > Remove Quint</button><hr>
 
           </li>
