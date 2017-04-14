@@ -49,7 +49,7 @@ angular.module("LoLStats")
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
-            $state.go('home');
+            $state.go('about');
           },
           // on error
           function(err) {

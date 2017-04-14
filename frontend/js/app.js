@@ -32,7 +32,7 @@ function ViewRouter($stateProvider, $urlRouterProvider){
            controller: 'ItemsController as items'
          })
          .state('home', {
-           url: '/',
+           url: '/home',
            templateUrl: 'home.html'
          })
          .state('login', {
@@ -49,6 +49,10 @@ function ViewRouter($stateProvider, $urlRouterProvider){
            url: '/editProfile',
            templateUrl: 'editProfile.html',
            controller: 'UserController as selfUser'
+         })
+         .state('about', {
+           url: '/',
+           templateUrl: 'about.html'
          })
 
 }

@@ -76,13 +76,23 @@ function setMark(rune){
 
 function removeMark(rune){
 	self.selectedMark = rune
-	if (self.totalMarksCount<9){
-		var duplicateMark = self.totalMarks.find(function(rune){
-			return rune.rune.id == self.selectedMark.id
-		})
-	self.totalMarks.splice(self.selectedMark, 1)
+	console.log(self.totalMarks)
+	if (self.totalMarksCount>1){
+		if (rune.count>1){
+			rune.count--
+		}else {
+			self.totalMarks.splice(self.totalMarks.indexOf(self.selectedMark), 1)
+		}
+			self.totalMarksCount--
+
+}else {
+	self.totalMarks =[]
+
+	self.totalMarksCount = 0
 }
 
+  // console.log(self.selectedMark)
+}
 
 
 
