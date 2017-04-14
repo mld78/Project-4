@@ -2,9 +2,6 @@
 
 > League of Stat Building will be a League of Legends application that allows a person to try out different combinations of runes, masteries, and items for a specific character to optimize their in-game stats.
 
-### Installation:
-
-### API Endpoints:
 
 ### Technologies Used:
 MEAN stack, Javascript, Html, Bootstrap, CSS, and the League of Legends [API](https://developer.riotgames.com/api-methods/#lol-static-data-v3/GET_getItemList)
@@ -32,7 +29,7 @@ An MVP will be to successfully build out each model and start linking up the sta
 5. Start the server with `nodemon` or `node server.js`.
 6. Navigate to `localhost:3000`, and you're good to go!
 
-### Unsolved Problems:
+### Unsolved Problems and Next Steps:
 
 On the rune page I am still working to pull out the statistical data based on the selected runes to show the base stats added together so a User can see specifically the results of their rune choices.  Further work down the road will be to make the site more engaging from a style standpoint as well as beginning to work on the other 3 pages so the application is fully functional for a player to theorycraft builds before getting into the game.
 
@@ -55,7 +52,3 @@ Index:
 
 **ERD:**    
 <img src="Readme_assets/ERD.jpg" width="300px">
-
-###Next Steps:
-
-###Unsolved Problems:
