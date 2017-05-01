@@ -1,6 +1,6 @@
 # League of Stat Building
 
-> League of Stat Building will be a League of Legends application that allows a person to try out different combinations of runes, masteries, and items for a specific character to optimize their in-game stats.
+> League of Stat Building is a League of Legends application that allows a person to try out different combinations of runes, masteries, and items for a specific character to optimize their in-game stats.
 
 
 ### Technologies Used:
